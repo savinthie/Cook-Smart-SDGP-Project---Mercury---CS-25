@@ -1,23 +1,21 @@
 import logo from './logo.svg';
+import React,{useState} from 'react';
 import './App.css';
+import images from "./bro.svg";
+import user from "./Customer.svg";
+import lock from "./Lock.svg";
+import {Login} from "./loginPage";
+
 
 function App() {
+  const[currentForm,setCurrentForm]=useState('Login');
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <img src= {images}alt="" id="logo"/>
+      <img src= {user}alt="" id="user"/>
+      <img src= {lock}alt=""id="lock" />
+    <Login/>
+       
     </div>
   );
 }
