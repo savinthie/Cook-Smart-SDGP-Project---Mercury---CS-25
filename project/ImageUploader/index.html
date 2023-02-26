@@ -1,0 +1,33 @@
+<!DOCTYPE  html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag & Drop or Browse: File Upload | CodingNepal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="left-column">
+        <img src="../images/Character.png" alt="This is a decorative image" id="image-uploader-deco-img">
+    </div>
+    <div id="middle-column">
+        <button id="back">Back</button>
+        <button id="submit">Upload Image</button>
+    </div>
+    <div id="right-column">
+        <div class="drag-container">
+            <h2 id="image-drop-area-heading">Image for Scanning</h2>
+            <div class="drag-area">
+                <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                <header>Drag & Drop to Upload File</header>
+                <span>OR</span>
+                <button>Browse File</button>
+                <input type="file" hidden>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
