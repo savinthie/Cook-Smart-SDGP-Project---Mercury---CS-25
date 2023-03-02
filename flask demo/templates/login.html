@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+</head>
+<body>
+	<h2>Login Page</h2>
+	<form method="POST" action="/submit_login">
+		<label>Username:</label>
+		<input type="text" name="username"><br><br>
+		<label>Password:</label>
+		<input type="password" name="password"><br><br>
+		<button type="submit">Login</button>
+	</form>
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body>
+</html>
