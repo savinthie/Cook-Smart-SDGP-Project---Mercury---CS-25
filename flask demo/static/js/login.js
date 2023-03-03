@@ -1,8 +1,9 @@
-const form = document.getElementById("login-form");
-form.addEventListener("submit", handleFormSubmit);
+const loginForm = document.getElementById("login-form");
+
+loginForm.addEventListener("submit", handleFormSubmit);
 
 function handleFormSubmit(event) {
-  event.preventDefault(); // Prevent form submission
+  event.preventDefault();
 
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
@@ -12,25 +13,30 @@ function handleFormSubmit(event) {
     alert("Please fill in all fields.");
     return;
   }
+  
 
-  // Send data to server for further processing
-  fetch("/login", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ username: username, password: password })
+  // Send data to server for authentication
+  fetch('/submit_login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ username, password })
   })
   .then(response => response.json())
   .then(data => {
     if (data.success) {
-      window.location.href = "/";
+      // Login successful, redirect to home page or show success message
+      window.location.href = "/home";
     } else {
-      alert(data.message);
+      // Login failed, show error message
+      const errorDiv = document.getElementById("error-message");
+      errorDiv.innerHTML = "Incorrect username or password.";
     }
   })
-  .catch(error => {
-    console.error("Error:", error);
-  });
+  .catch(error => console.error(error));
 
   // Clear form fields
-  form.reset();
+  loginForm.reset();
 }
+

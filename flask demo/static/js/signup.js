@@ -22,12 +22,27 @@ function handleFormSubmit(event) {
     },
     body: JSON.stringify({username, email, password})
   })
-  .then(response => response.text())
+  .then(response => {
+    if (response.ok) {
+      return response.text();
+    } else if (response.status === 409) {
+      alert("Username or email already taken.")
+      throw new Error("Username or email already taken.");
+     
+    } else {
+      alert("Something went wrong.")
+      throw new Error("Something went wrong.");
+    }
+  })
+  //.then(response => response.text())
+  
+  
   .then(data => {
     console.log(data);
     window.location.href = '/home';
   })
   .catch(error => console.error(error));
+  
 
   // Clear form fields
   form.reset();

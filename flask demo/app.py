@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request,redirect
+from flask import Flask, render_template, request,redirect,jsonify
 from pymongo import MongoClient
 from flask_bcrypt import Bcrypt
 
@@ -22,6 +22,11 @@ def submit():
     email = data["email"]
     password = data["password"]
 
+
+    if collection.find_one({"$or": [{"username": username}, {"email": email},{"password":password}]}):
+        return "Username or email already taken", 409
+
+
     hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
 
 
@@ -40,6 +45,28 @@ def home():
 @app.route('/login')
 def another_page():
     return render_template('login.html')
+
+@app.route("/submit_login", methods=["POST"])
+def submit_login():
+    # Get the data from the request
+    data = request.get_json()
+    username = data["username"]
+    password = data["password"]
+
+    # Check if the username exists in the database
+    user = collection.find_one({"username": username})
+    if user is None:
+        # Username not found
+        return jsonify({"success": False}), 401
+
+    # Check if the password matches
+    if not bcrypt.check_password_hash(user["password"], password):
+        # Password incorrect
+        return jsonify({"success": False}), 401 
+     # Redirect to the home page
+     # Password correct
+    return jsonify({"success": True})
+
 
 
 

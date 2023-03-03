@@ -5,13 +5,15 @@
 </head>
 <body>
 	<h2>Login Page</h2>
-	<form method="POST" action="/submit_login">
+	<form id="login-form">
 		<label>Username:</label>
-		<input type="text" name="username"><br><br>
+		<input type="text" id="username"><br><br>
 		<label>Password:</label>
-		<input type="password" name="password"><br><br>
+		<input type="password" id="password"><br><br>
 		<button type="submit">Login</button>
+		<a href="/">Not registered? Sign up</a>
 	</form>
-    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+	<div id="error-message"></div>
+	<script src="{{ url_for('static', filename='js/login.js') }}"></script>
 </body>
 </html>
