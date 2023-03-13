@@ -11,7 +11,7 @@
 <body>
 
 <div class="container">
-  <h1 class="jumbotron bg-primary">Image Classfication</h1>
+  <h1 class="jumbotron bg-primary">Image Classification</h1>
   <br><br>
   <form class="form-horizontal" action="/submitPrediction" method="post" enctype="multipart/form-data">
 
@@ -29,16 +29,27 @@
     </div>
   </form>
 
-	{% if prediction %}
-  <img src="{{foodImage_path}}" height="400px" width="400px">
-	<h2> Your Prediction   : <i> {{prediction}} </i></h2>
-  <h2> recipe   : <p> {{recipe}} </p></h2>
-
-	{% endif %}
+  {% if prediction %}
+    <div class="row">
+      <div class="col-md-4">
+        <img src="{{foodImage_path}}" class="img-responsive">
+      </div>
+      <div class="col-md-8">
+        <h2> Your Prediction: <i> {{prediction}} </i></h2>
+        <h2> Ingredients: </h2>
+        <ul>
+          {% for ingredient in ingredients %}
+            <li>{{ ingredient }}</li>
+          {% endfor %}
+        </ul>
+        <h2> Recipe: </h2>
+        <p>{{ recipe }}</p>
+      </div>
+    </div>
+  {% endif %}
 
 </div>
 
 </body>
 </html>
-
 

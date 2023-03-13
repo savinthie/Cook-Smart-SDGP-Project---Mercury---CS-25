@@ -7,6 +7,7 @@ cooksmartapp = Flask(__name__)
 bcrypt = Bcrypt(cooksmartapp)
 
 # Set up the MongoDB client and database
+
 client = MongoClient("mongodb+srv://savinthie:cookSmart25@cluster0.zg9e7jn.mongodb.net/test")
 db = client["cooksmart"]
 collection = db["signup_info"]
@@ -114,8 +115,19 @@ def predict_image_class(foodImage_path):
     cooksmartPrediction_accuracy = predictions[0][cooksmart_prediction_class] * 100
     cooksmartPrediction_accuracy = f"{round(cooksmartPrediction_accuracy, 2)} %"
 
-    return FOOD_CLASSES[cooksmart_prediction_class]#return the predicted food name from the food class dictionary
-#if accuracy is required :return cooksmartPrediction_accuracy
+    predicted_food_name = FOOD_CLASSES[cooksmart_prediction_class]
+    
+    result = collection.find_one({'food_name': predicted_food_name})
+    recipe = result['recipe']
+    ingredients = result['ingredients']
+    
+    return predicted_food_name, recipe, ingredients
+    
+    
+    # query the database for the recipe and ingredients of the predicted food
+    
+
+   
 
 
 # routes
@@ -125,31 +137,26 @@ def main():
 
 @cooksmartapp.route("/submitPrediction", methods = ['GET', 'POST'])
 def get_output():
-	if request.method == 'POST':
-		foodImage = request.files['cooksmartFood_image']
-
-		foodImage_path = "flask demo/static/images/" + foodImage.filename	#created a static folder to store the images that is being uploaded by the user
-		foodImage.save(foodImage_path)
-		p = predict_image_class(foodImage_path)
-		print(p)
-		print(collection1.find_one({'foodName':p}))#find the predicted food name in the db
-		y=(collection1.find({'foodName':p}))
-  
-		
-  
- 		
-  
-  
-  
-  
+    if request.method == 'POST':
+        foodImage = request.files['cooksmartFood_image']
+        foodImage_path = "flask demo/static/images/" + foodImage.filename
+        foodImage.save(foodImage_path)
         
+        # predict the food image and retrieve the recipe and ingredients from the database
+        predicted_food_name, recipe, ingredients = predict_image_class(foodImage_path)
         
-        
+        # pass the predicted food name, recipe, and ingredients to the template
+        return render_template("home.html", 
+                               prediction=predicted_food_name, 
+                               foodImage_path=foodImage_path,
+                               recipe=recipe,
+                               ingredients=ingredients)
+    
+    return render_template("home.html")
         
         
 
-	return render_template("home.html", prediction = p, foodImage_path = foodImage_path,recipe=y)#return the prediction result to the frontend
-
+	
 
 #signup and  login
 @cooksmartapp.route("/")
