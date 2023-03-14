@@ -117,11 +117,9 @@ def predict_image_class(foodImage_path):
 
     predicted_food_name = FOOD_CLASSES[cooksmart_prediction_class]
     
-    result = collection.find_one({'food_name': predicted_food_name})
-    recipe = result['recipe']
-    ingredients = result['ingredients']
     
-    return predicted_food_name, recipe, ingredients
+    
+    return FOOD_CLASSES[cooksmart_prediction_class]#return the predicted foodname
     
     
     # query the database for the recipe and ingredients of the predicted food
@@ -141,10 +139,17 @@ def get_output():
         foodImage = request.files['cooksmartFood_image']
         foodImage_path = "flask demo/static/images/" + foodImage.filename
         foodImage.save(foodImage_path)
+        predicted_food_name = predict_image_class(foodImage_path)
+        result = collection.find_one({'food_name': predicted_food_name})
+        recipe = result['Recipe']#found the recipe for the foodname
+        ingredients = result['ingredients']#found the ingredients of the foodname
+        user=input("Enter allergen:")#the user enters the allergen
+        if(ingredients.find(user)!=-1):#find the index of the user entered allergen
+            print("allergen is there")
+        else:
+            print("allergen is not there")  
         
-        # predict the food image and retrieve the recipe and ingredients from the database
-        predicted_food_name, recipe, ingredients = predict_image_class(foodImage_path)
-        
+       
         # pass the predicted food name, recipe, and ingredients to the template
         return render_template("home.html", 
                                prediction=predicted_food_name, 
