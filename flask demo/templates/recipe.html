@@ -10,7 +10,7 @@
 </head>
 <body>
    
-<div id="left-column">
+<!--<div id="left-column">
     <img src="pana.png"/>  
 </div>
 <div id="middle-column">
@@ -61,6 +61,27 @@
 
 
 
-<script src="recipe.js"></script> 
+<script src="recipe.js"></script> -->
+
+
+{% if prediction %}
+    <div class="row">
+      <div class="col-md-4">
+        <img src="{{foodImage_path}}" class="img-responsive">
+      </div>
+      <div class="col-md-8">
+        <h2> Your Prediction: <i> {{prediction}} </i></h2>
+        <h2> Ingredients: </h2>
+        <ul>
+          {% for ingredient in ingredients %}
+            <li>{{ ingredient }}</li>
+          {% endfor %}
+        </ul>
+        <h2> Recipe: </h2>
+        <p>{{ recipe }}</p>
+      </div>
+    </div>
+  {% endif %}
+
 </body>
 </html>

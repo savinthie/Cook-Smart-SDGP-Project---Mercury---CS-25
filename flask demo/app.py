@@ -141,17 +141,17 @@ def get_output():
         foodImage.save(foodImage_path)
         predicted_food_name = predict_image_class(foodImage_path)
         result = collection.find_one({'food_name': predicted_food_name})
-        recipe = result['Recipe']#found the recipe for the foodname
-        ingredients = result['ingredients']#found the ingredients of the foodname
-        user=input("Enter allergen:")#the user enters the allergen
-        if(ingredients.find(user)!=-1):#find the index of the user entered allergen
-            print("allergen is there")
-        else:
-            print("allergen is not there")  
+        #recipe = result['Recipe']#found the recipe for the foodname
+        #ingredients = result['ingredients']#found the ingredients of the foodname
+        #user=input("Enter allergen:")#the user enters the allergen
+        #if(ingredients.find(user)!=-1):#find the index of the user entered allergen
+          #  print("allergen is there")
+        #else:
+           # print("allergen is not there")  
         
        
         # pass the predicted food name, recipe, and ingredients to the template
-        return render_template("home.html", 
+        return render_template("recipe.html", 
                                prediction=predicted_food_name, 
                                foodImage_path=foodImage_path,
                                recipe=recipe,
