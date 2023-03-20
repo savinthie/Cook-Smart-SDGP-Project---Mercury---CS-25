@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cook Smart</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/allergystyle.css') }}">
     <link rel="shortcut icon" type="images/jpg" href="./images/icon.png">
 </head>
 <body>
     <div class="allergy-image">
-        <img src="./images/vector.png" alt="">
+        <img  src="{{ url_for('static', filename='templateImages/vector.png') }}">
+        
     </div>
 
     <div class="allergies-section">
@@ -32,15 +33,19 @@
 
         <div class="allergies-input">
             <h3>Other</h3>
-            <input type="text">
+            
+            <input type="text"name="cooksmartFood_allergen" >
         </div>
 
         <div class="allergies-submit">
             <a href="#"><button>NEXT</button></a>
         </div>
     </div>
+    
+    <p>{{allergy}}</p>
+   
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 
-<script src="main.js">
-</script>
+
 </body>
 </html>
