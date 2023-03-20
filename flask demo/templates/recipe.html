@@ -6,55 +6,32 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>Recipe</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/recipestyle.css') }}">
+    <title>Food Recipe and Ingredients</title>
 </head>
 <body>
-  {% if prediction %} 
+   
 <div id="left-column">
-
-  <img src="{{foodImage_path}}" class="img-responsive">
+<img  src="{{ url_for('static', filename='templateImages/pana.png') }}">
 </div>
+{% if prediction %}
 <div id="middle-column">
-    <h1 style="text-align: center;"> <i> {{prediction}} </i>
+    <h1 style="text-align: center;">  {{prediction}} </h1>
+    <h2>Ingredients</h2>
     <p align="center"> {{ing}} </p>
-       </p>
+    <h2>Recipe</h2>
+      <p>{{recipe}}</p>
 </div>
 <div id="right-column">
+  
+  
     
-    <img src="2 2 (1).png" width=30% height=60% />          
-
-    <div class="drag-container">
-        <div class="drag-area"></div>
-        <button id="viewRecipe">View Recipe</button>
-       <button id="back">Back</button>
-
 		
     </div>
 
-
-
-<script src="recipe.js"></script> 
-
-{% endif %}
-
-    
   
-
-<!--{% if prediction %}
-    <div class="row">
-      <div class="col-md-4">
-        <img src="{{foodImage_path}}" class="img-responsive">
-      </div>
-      <div class="col-md-8">
-        <h2> Your Prediction: <i> {{prediction}} </i></h2>
-        <h2> Ingredients   : </h2><p> {{ing}} </p>
-        
-         
-        <h2> Recipe: </h2>
-        <p>{{ recipe }}</p>
-      </div>
-    </div>
-  {% endif %}-->
-
+    
+    {% endif %}
+ 
 </body>
 </html>

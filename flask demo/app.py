@@ -183,7 +183,9 @@ def get_output():
     return render_template("recipe.html", prediction = p, foodImage_path = foodImage_path,recipe=recipe,ing=ingredient)#return the prediction result to the frontend
         
         
-
+@cooksmartapp.route("/viewRecipe", methods = ['GET', 'POST'])
+def submitrecipe():
+    return render_template("recipe1.html")
 	
 
 #signup and  login
