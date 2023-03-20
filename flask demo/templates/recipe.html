@@ -9,42 +9,14 @@
     <title>Recipe</title>
 </head>
 <body>
-   
-<!--<div id="left-column">
-    <img src="pana.png"/>  
+  {% if prediction %} 
+<div id="left-column">
+
+  <img src="{{foodImage_path}}" class="img-responsive">
 </div>
 <div id="middle-column">
-    <h1 style="text-align: center;"> Chettinad Style Kara Kuzhambu Recipe with Potato and Brinjal</h1>
-    <p align="center">For ground masala 1/4 teaspoon,<br>
-
-        Methi Seeds (Fenugreek Seeds) ,<br>
-       
-       2 teaspoons Coriander (Dhania) Seeds ,<br>
-       
-       1 teaspoon Fennel seeds (Saunf), <br>
-       
-       2 Dry Red Chillies 1/4 cup Fresh ,<br>
-       
-       coconut , grated For the Kuzhambu 1/2 cup Pearl onions (Sambar Onions) ,
-       
-        quartered 5 cloves Garlic ,
-       
-        finely chopped 2 Tomatoes ,
-       
-        finely chopped 2 Potatoes (Aloo) , 
-       
-       cut into medium sized pieces 2 Brinjal (Baingan / Eggplant) cut into wedges ,
-       
-       1 tablespoon Jaggery ,
-       
-       1 cup Tamarind Water 1 teaspoon ,
-       
-       Sambar Powder For seasoning ,
-       
-       1 teaspoon Gingelly oil,
-       
-        1/2 teaspoon Mustard seeds,
-        (Rai/ Kadugu) 
+    <h1 style="text-align: center;"> <i> {{prediction}} </i>
+    <p align="center"> {{ing}} </p>
        </p>
 </div>
 <div id="right-column">
@@ -61,27 +33,28 @@
 
 
 
-<script src="recipe.js"></script> -->
+<script src="recipe.js"></script> 
 
+{% endif %}
 
-{% if prediction %}
+    
+  
+
+<!--{% if prediction %}
     <div class="row">
       <div class="col-md-4">
         <img src="{{foodImage_path}}" class="img-responsive">
       </div>
       <div class="col-md-8">
         <h2> Your Prediction: <i> {{prediction}} </i></h2>
-        <h2> Ingredients: </h2>
-        <ul>
-          {% for ingredient in ingredients %}
-            <li>{{ ingredient }}</li>
-          {% endfor %}
-        </ul>
+        <h2> Ingredients   : </h2><p> {{ing}} </p>
+        
+         
         <h2> Recipe: </h2>
         <p>{{ recipe }}</p>
       </div>
     </div>
-  {% endif %}
+  {% endif %}-->
 
 </body>
 </html>

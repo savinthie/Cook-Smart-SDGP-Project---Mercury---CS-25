@@ -133,31 +133,54 @@ def predict_image_class(foodImage_path):
 def main():
 	return render_template("home.html")
 
+#@cooksmartapp.route("/submitPrediction", methods = ['GET', 'POST'])
+#def get_output():
+    #if request.method == 'POST':
+        #foodImage = request.files['cooksmartFood_image']
+        #foodImage_path = "flask demo/static/images/" + foodImage.filename
+        #foodImage.save(foodImage_path)
+        #predicted_food_name = predict_image_class(foodImage_path)
+        #result = collection1.find_one({'food_name':predicted_food_name})
+       
+        #recipe = result['Recipe']#found the recipe for the foodname
+    
+        #ingredients = result['ingredients']#found the ingredients of the foodname
+        #user=input("Enter allergen:")#the user enters the allergen
+        #if(ingredients.find(user)!=-1):#find the index of the user entered allergen
+           # print("allergen is there")
+       # else:
+            #print("allergen is not there")  
+        
+       
+        # pass the predicted food name, recipe, and ingredients to the template
+        #return render_template("home.html", 
+                               #prediction=predicted_food_name, 
+                               #foodImage_path=foodImage_path,
+                               #ingredient=ingredients,
+                               #recipe=recipe
+                              # )
+    
+    #return render_template("home.html")
+    
 @cooksmartapp.route("/submitPrediction", methods = ['GET', 'POST'])
 def get_output():
     if request.method == 'POST':
         foodImage = request.files['cooksmartFood_image']
-        foodImage_path = "flask demo/static/images/" + foodImage.filename
-        foodImage.save(foodImage_path)
-        predicted_food_name = predict_image_class(foodImage_path)
-        result = collection.find_one({'food_name': predicted_food_name})
-        #recipe = result['Recipe']#found the recipe for the foodname
-        #ingredients = result['ingredients']#found the ingredients of the foodname
-        #user=input("Enter allergen:")#the user enters the allergen
-        #if(ingredients.find(user)!=-1):#find the index of the user entered allergen
-          #  print("allergen is there")
-        #else:
-           # print("allergen is not there")  
+
+        foodImage_path = "flask demo/static/images/" + foodImage.filename	#created a static folder to store the images that is being uploaded by the user
         
-       
-        # pass the predicted food name, recipe, and ingredients to the template
-        return render_template("recipe.html", 
-                               prediction=predicted_food_name, 
-                               foodImage_path=foodImage_path,
-                               recipe=recipe,
-                               ingredients=ingredients)
-    
-    return render_template("home.html")
+        foodImage.save(foodImage_path)
+        p = predict_image_class(foodImage_path)
+        print(p)
+        result=collection1.find_one({'foodName':p})#find the predicted food name in the db
+        recipe = result['Recipe']#found the recipe for the foodname
+        ingredient=result['ingredients']
+        
+  
+
+        
+
+    return render_template("recipe.html", prediction = p, foodImage_path = foodImage_path,recipe=recipe,ing=ingredient)#return the prediction result to the frontend
         
         
 
