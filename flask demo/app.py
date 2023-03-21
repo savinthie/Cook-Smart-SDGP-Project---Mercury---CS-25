@@ -193,7 +193,11 @@ def get_output():
 def viewAllergy():
     
     return render_template("allergies.html")
-	
+
+
+@cooksmartapp.route("/presentation")
+def predictionPage():
+    return render_template("index.html")	
 
 #signup and  login
 @cooksmartapp.route("/")
