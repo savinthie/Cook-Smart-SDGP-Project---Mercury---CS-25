@@ -167,12 +167,13 @@ def get_output():
     return render_template("recipe.html", prediction=p, foodImage_path=foodImage_path, recipe=recipe, ing=ingredient)
 
 
-
+allergy_list=[]
 @cooksmartapp.route('/allergy_list', methods=['POST'])
 def allergy_list():
     data = request.get_json()
+    global allergy_list
     allergy_list = data.get('allergy_list')
-    print(allergy_list)
+    
     # do something with allergy_list
     print(predicted_food_name)
     print(ingredient)
@@ -185,24 +186,33 @@ def allergy_list():
             allergycount+=1
             print(allergycount)
         else:
+            allergycount==0
             print("allergen is not there")
         
     
 
     
 
-    return jsonify({'success': True}),render_template("notification.html")
+    return render_template("notification.html")
 
-
-
-
-
-
+message=""
+@cooksmartapp.route("/newpath")
+def viewnew():
+    global message
+    print(allergycount)
+    if(allergycount>0):
+        message="Yes"
+    else:
+        message="No"    
+   
+    return render_template("notification.html",message=message)
 
 
 @cooksmartapp.route("/viewAllergy")
 def viewAllergy():
     return render_template("allergies.html")
+
+
 
 
 

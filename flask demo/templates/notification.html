@@ -18,17 +18,8 @@
 
     
     
-    <h2>Notification</h2>
-    % with messages = get_flashed_messages() %}
-    {% if messages %}
-        <ul class=flashes>
-        {% for message in messages %}
-            <li>{{ message }}</li>
-        {% endfor %}
-        </ul>
-    {% endif %}
-
-     
+    <h2>Notification{{message}}</h2>
+    
 
       
       
@@ -36,7 +27,28 @@
 
 
 
+<script type="text/javascript">
+    function checkForNotifications() {
+        $.ajax({
+            url: '/usernotification',
+            dataType: 'json',
+            success: function(data) {
+                if (data.length > 0) {
+                    alert(data[0].message);
+                }
+            },
+            complete: function() {
+                // Schedule the next check for 10 seconds from now
+                setTimeout(checkForNotifications, 10000);
+            }
+        });
+    }
 
+    $(document).ready(function() {
+        // Start checking for notifications when the page loads
+        checkForNotifications();
+    });
+</script>
 
     
     
