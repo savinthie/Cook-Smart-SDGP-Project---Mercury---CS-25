@@ -182,9 +182,19 @@ def get_output():
     return render_template("recipe.html", prediction=p, foodImage_path=foodImage_path, recipe=recipe, ing=ingredient)
 
 
+@cooksmartapp.route('/allergy_list', methods=['POST'])
+def allergy_list():
+    data = request.get_json()
+    allergy_list = data.get('allergy_list')
+    print(allergy_list)
+    # do something with allergy_list
+    return jsonify({'success': True})
+
+
 @cooksmartapp.route("/viewAllergy")
 def viewAllergy():
     return render_template("allergies.html")
+
 
 
 @cooksmartapp.route("/presentation")

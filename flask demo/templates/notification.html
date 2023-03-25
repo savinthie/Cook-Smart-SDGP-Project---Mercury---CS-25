@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/#.css') }}">
+    <title>User Notification</title>
+</head>
+<body>
+   
+<div id="left-column">
+<img  src="{{ url_for('static', filename='templateImages/#.png') }}">
+</div>
+
+    
+    
+    <h2>Notification</h2>
+    % with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+     
+
+      
+      
+</div>
+
+
+
+<script type="text/javascript">
+    function checkForNotifications() {
+        $.ajax({
+            url: '/usernotification',
+            dataType: 'json',
+            success: function(data) {
+                if (data.length > 0) {
+                    alert(data[0].message);
+                }
+            },
+            complete: function() {
+                // Schedule the next check for 10 seconds from now
+                setTimeout(checkForNotifications, 10000);
+            }
+        });
+    }
+
+    $(document).ready(function() {
+        // Start checking for notifications when the page loads
+        checkForNotifications();
+    });
+</script>
+
+    
+    
+  
+ 
+</body>
+</html>

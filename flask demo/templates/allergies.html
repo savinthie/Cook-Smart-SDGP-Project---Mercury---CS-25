@@ -40,11 +40,11 @@
         <div class="allergies-update">
             <a href="#"><button id="updateAllergies" onclick="updateAllergies()">SAVE</button></a>
         </div>
-        
-        <div class="allergies-submit">
+         <div class="allergies-submit">
             <a href="#"><button id="saveAllergies" onclick="saveAllergies()">NEXT</button></a>
         </div>
         
+       
     </div>
    
     <p>{{allergy}}</p>
@@ -71,6 +71,37 @@
           allergyListElement.innerHTML = "Selected allergies: " + selectedOptions.join(", ");
 
         }
+
+      
+        
+          function saveAllergies() {
+            const selectElement = document.getElementById("allergiesList");
+            const selectedOptions = [];
+            const options = selectElement.selectedOptions;
+            for (let i = 0; i < options.length; i++) {
+              selectedOptions.push(options[i].value);
+            }
+          
+            const inputElement = document.getElementById("allergiesInput");
+            const inputValue = inputElement.value.trim();
+            if (inputValue !== "") {
+              selectedOptions.push(inputValue);
+            }
+          
+            // send AJAX request to Flask server
+            const xhr = new XMLHttpRequest();
+              const url = "{{ url_for('allergy_list') }}";
+              const data = JSON.stringify({"allergy_list": selectedOptions});
+              xhr.open("POST", url);
+              xhr.setRequestHeader("Content-Type", "application/json");
+              xhr.send(data);
+          }
+            
+            
+              
+            
+            
+           
 
         </script>
     
