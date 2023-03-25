@@ -36,28 +36,7 @@
 
 
 
-<script type="text/javascript">
-    function checkForNotifications() {
-        $.ajax({
-            url: '/usernotification',
-            dataType: 'json',
-            success: function(data) {
-                if (data.length > 0) {
-                    alert(data[0].message);
-                }
-            },
-            complete: function() {
-                // Schedule the next check for 10 seconds from now
-                setTimeout(checkForNotifications, 10000);
-            }
-        });
-    }
 
-    $(document).ready(function() {
-        // Start checking for notifications when the page loads
-        checkForNotifications();
-    });
-</script>
 
     
     
