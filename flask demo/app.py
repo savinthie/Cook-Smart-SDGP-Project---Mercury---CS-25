@@ -140,9 +140,11 @@ def main():
 predicted_food_name = ""  # declare a global variable to store the predicted food name
 ingredient=""
 allergycount=0
+p=""
 
 @cooksmartapp.route("/submitPrediction", methods=['GET', 'POST'])
 def get_output():
+    global p
     global predicted_food_name  # reference the global variable
     global ingredient
     global allergycount
@@ -164,7 +166,7 @@ def get_output():
         ingredient = result['ingredients']
 
     # return the prediction result to the frontend
-    return render_template("recipe.html", prediction=p, foodImage_path=foodImage_path, recipe=recipe, ing=ingredient)
+    return render_template("recipe.html", prediction=predicted_food_name, recipe=recipe, ing=ingredient)
 
 
 allergy_list=[]
@@ -216,16 +218,16 @@ def viewAllergy():
 
 
 
-@cooksmartapp.route("/presentation")
+"""@cooksmartapp.route("/presentation")
 def predictionPage():
-    return render_template("index.html")
+    return render_template("index.html")"""
 
 # signup and  login
 
 
 @cooksmartapp.route("/")
 def index():
-    return render_template("signup.html")
+    return render_template("index.html")
 
 
 @cooksmartapp.route("/submit", methods=["POST"])
