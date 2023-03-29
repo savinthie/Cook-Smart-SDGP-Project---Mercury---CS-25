@@ -10,7 +10,7 @@ class FlaskTest(unittest.TestCase):
         self.client = cooksmartapp.test_client()
         self.client.testing = True
 
-        # Add a test user to the database
+        
         hashed_password = bcrypt.generate_password_hash('password').decode('utf-8')
         collection.insert_one({"username": "testuser", "email": "testuser@test.com", "password": hashed_password})
 
