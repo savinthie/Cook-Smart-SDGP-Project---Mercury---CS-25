@@ -1,25 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Sign Up</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
-    <h1>Sign Up</h1>
-    <form id="signup-form">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required><br>
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required><br>
-
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required><br>
-      <button type="submit">Sign Up</button>
-      <a href="/login">Already have an account? Log in</a>
-    </form>
-    
-    <script src="{{ url_for('static', filename='js/signup.js') }}"></script>
-  </body>
-</html>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" type="images/jpg" href="./images/icon.png">
+</head>
+<body>
+    <div class="login_SigIn-page">
+        <img src="/login_SigIn.png" alt="">
+        <div class="form-box">
+            <div class="form-value">
+                <form id="signup-form">
+                    <h2>Sign Up</h2>
+                    <div class="inputbox">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </div>
+                    <div class="inputbox">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                    </div>
+                    <button type="submit">Sign Up</button>
+                    <div class="register">
+                        <p>Already have an account? <a href="./login.html">Log in</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script src="{{ url_for('static', filename='js/signup.js') }}"></script>
+    </body>
+    </html>
