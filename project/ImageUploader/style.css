@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
@@ -130,3 +131,137 @@ body{
   object-fit: cover;
   border-radius: 5px;
 }
+=======
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #135F9D;
+}
+/*Column Division*/
+#left-column {
+  display: flex;
+  background-color: #135F9D;
+  width: 50%;
+}
+/*Drag Container*/
+.drag-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+  position: absolute;
+  top: 5%;
+}
+/*Decorative image*/
+#image-uploader-deco-img {
+  height: 600px;
+  max-width: 100%;
+  margin: auto;
+  position: relative;
+  top: 50%;
+}
+/*Image Drop Area Heading*/
+#image-drop-area-heading {
+  text-align: center;
+  margin-top: 0;
+}
+/* Style for the right column */
+#right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #135F9D;
+  width: 50%;
+  height: 100%;
+}
+
+#middle-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* align items to the bottom of the column */
+  align-items: center;
+  background-color: #135F9D;
+  width: 1%;
+  height: 100%;
+}
+
+#middle-column button {
+  padding: 10px 25px;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  background: #fff;
+  color: #5256ad;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 75%;
+  left: 59.35%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.301) ;
+}
+
+#middle-column #submit {
+  position: absolute;
+  left: 79%;
+  top: 75.35%;
+}
+
+.drag-area{
+  border: 2px dashed #fff;
+  height: 400px;
+  width: 500px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.drag-area.active{
+  border: 2px solid #fff;
+}
+.drag-area .icon{
+  font-size: 100px;
+  color: #fff;
+}
+.drag-area header{
+  font-size: 30px;
+  font-weight: 500;
+  color: #fff;
+}
+.drag-area span{
+  font-size: 25px;
+  font-weight: 500;
+  color: #fff;
+  margin: 10px 0 15px 0;
+}
+.drag-area button{
+  padding: 10px 25px;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  background: #fff;
+  color: #5256ad;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.drag-area img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+>>>>>>> d981ace22a14f827a0360947269308e48e916a69
