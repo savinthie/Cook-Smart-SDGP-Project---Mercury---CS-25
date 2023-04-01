@@ -203,7 +203,7 @@ def viewnew():
         message = "Yes"
 
     else:
-        message = "None"
+        message = "No"
 
     return render_template("notification.html", message=message)
 
