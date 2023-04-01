@@ -12,7 +12,7 @@
 
     {% if message == "Yes" %}
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/notificationYes.css') }}">
-  {% elif message == "No" %}
+  {% elif message == "None" %}
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/notificationNone.css') }}">
   {% endif %}
 
