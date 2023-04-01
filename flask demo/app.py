@@ -132,12 +132,25 @@ def main():
     return render_template("home.html")
 
 
+<<<<<<< HEAD
 predicted_food_name = ""  # declare a global variable to store the predicted food name
 ingredient = ""
 allergycount = 0
 p = ""
 
 
+=======
+
+
+
+
+
+predicted_food_name = ""  # declare a global variable to store the predicted food name
+ingredient=""
+allergycount=0
+p=""
+
+>>>>>>> d981ace22a14f827a0360947269308e48e916a69
 @cooksmartapp.route("/submitPrediction", methods=['GET', 'POST'])
 def get_output():
     global p
@@ -165,24 +178,37 @@ def get_output():
     return render_template("recipe.html", prediction=predicted_food_name, recipe=recipe, ing=ingredient)
 
 
+<<<<<<< HEAD
 allergy_list = []
 
 
+=======
+allergy_list=[]
+>>>>>>> d981ace22a14f827a0360947269308e48e916a69
 @cooksmartapp.route('/allergy_list', methods=['POST'])
 def allergy_list():
     data = request.get_json()
     global allergy_list
     allergy_list = data.get('allergy_list')
+<<<<<<< HEAD
 
     # do something with allergy_list
     print(predicted_food_name)
     print(ingredient)
 
+=======
+    
+    # do something with allergy_list
+    print(predicted_food_name)
+    print(ingredient)
+    
+>>>>>>> d981ace22a14f827a0360947269308e48e916a69
     for i in allergy_list:
         global allergycount
         print(i)
         if (ingredient.find(i) != -1):  # find the index of the user entered allergen
             print("allergen is there")
+<<<<<<< HEAD
             allergycount += 1
             print(allergycount)
         else:
@@ -206,6 +232,31 @@ def viewnew():
         message = "No"
 
     return render_template("notification.html", message=message)
+=======
+            allergycount+=1
+            print(allergycount)
+        else:
+            allergycount==0
+            print("allergen is not there")
+        
+    
+
+    
+
+    return render_template("notification.html")
+
+message=""
+@cooksmartapp.route("/newpath")
+def viewnew():
+    global message
+    print(allergycount)
+    if(allergycount>0):
+        message="Yes"
+    else:
+        message="No"    
+   
+    return render_template("notification.html",message=message)
+>>>>>>> d981ace22a14f827a0360947269308e48e916a69
 
 
 @cooksmartapp.route("/viewAllergy")
@@ -213,6 +264,12 @@ def viewAllergy():
     return render_template("allergies.html")
 
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> d981ace22a14f827a0360947269308e48e916a69
 """@cooksmartapp.route("/presentation")
 def predictionPage():
     return render_template("index.html")"""
