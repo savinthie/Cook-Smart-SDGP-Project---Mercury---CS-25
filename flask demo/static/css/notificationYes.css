@@ -29,9 +29,7 @@ p {
 
 }
 
-.sneeze-image img {
-    width: 50%;
-    /* or any other value you prefer */
+.image {
+    width: 50px;
     height: auto;
-    /* this ensures that the image retains its aspect ratio */
 }
