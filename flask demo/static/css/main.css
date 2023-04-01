@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+}
+
+body {
+  overflow: hidden;
+  user-select: none;
+  height: 100vh;
+  background-color: #135f9d;
+}
+
+.loader {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader img {
+  position: absolute;
+  top: 20%;
+  height: 50vh;
+  filter: drop-shadow(0px 0px 20px rgb(0, 0, 0, 0.7));
+}
+
+.loader iframe {
+  position: absolute;
+  bottom: -8%;
+  border: none;
+  height: 15rem;
+  margin-top: 1rem;
+  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.479));
+}
+
+/* login & sign-up pages  */
+.login_SigIn-page {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #135f9d;
+  background-position: center;
+  background-size: cover;
+}
+
+.login_SigIn-page img {
+  height: 100vh;
+}
+
+.form-box {
+  position: absolute;
+  right: 20%;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.login_SigIn-page h2 {
+  font-size: 2em;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.inputbox {
+  position: relative;
+  margin: 30px 0;
+  width: 310px;
+  border-bottom: 2px solid #fff;
+}
+
+.inputbox label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 1em;
+  pointer-events: none;
+  transition: .5s;
+  top: -4px;
+}
+
+.inputbox input {
+  width: 90%;
+  height: 50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  color: #fff;
+}
+
+.inputbox ion-icon {
+  position: absolute;
+  right: 8px;
+  color: #fff;
+  font-size: 1.2em;
+  top: 20px;
+}
+
+.login_SigIn-btn button {
+  width: 100%;
+  height: 40px;
+  background: #fff;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-shadow: rgba(0, 0, 0, 0.486) 0px 0px 10px 0px;
+  transition: 0.3s;
+}
+
+.login_SigIn-btn button:hover {
+  box-shadow: rgba(0, 0, 0, 0.788) 0px 0px 10px 0px;
+  cursor: pointer;
+}
+
+.register {
+  font-size: .9em;
+  color: #fff;
+  text-align: center;
+  margin: 25px 0 10px;
+}
+
+.register p a {
+  /* text-decoration: none; */
+  color: #fff;
+  font-weight: 600;
+}
+
+/* allergies page */
+.allergy-image {
+  height: 100%;
+  width: 30vw;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.allergy-image img {
+  height: 100%;
+  width: 100% auto;
+  -webkit-user-drag: none;
+}
+
+.allergies-section {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 70vw;
+  margin-right: 5rem;
+}
+
+.allergies-section h1 {
+  position: absolute;
+  right: 13%;
+  top: 5rem;
+  color: white;
+  font-family: "Heebo", sans-serif;
+  filter: drop-shadow(0px 0px 10px rgb(0, 0, 0, 0.7));
+}
+
+.select {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 100%;
+  position: absolute;
+  top: 45%;
+  left: 90%;
+  transform: translate(-90%, -50%);
+  background: transparent;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.select__item {
+  padding: 12px;
+  height: 50px;
+  width: 150px;
+  cursor: pointer;
+  font-family: "Heebo", sans-serif;
+  border-radius: 3px;
+  border: 2px solid white;
+  color: white;
+  transition: 0.3s;
+  box-shadow: rgba(255, 255, 255, 0.301) 0px 0px 10px 0px;
+}
+
+.select__item:hover {
+  box-shadow: rgba(255, 255, 255) 0px 0px 10px 0px;
+}
+
+.select__item--selected {
+  background: white;
+  color: #135f9d;
+  box-shadow: rgba(255, 255, 255) 0px 0px 10px 0px;
+}
+
+.allergies-input {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  position: absolute;
+  bottom: 9rem;
+  left: 39.5%;
+  justify-content: center;
+  align-items: center;
+}
+
+.allergies-input h3 {
+  color: white;
+  font-family: "Heebo", sans-serif;
+  filter: drop-shadow(0px 0px 10px rgb(0, 0, 0, 0.7));
+}
+
+.allergies-input input {
+  height: 50px;
+  width: 150px;
+  background-color: transparent;
+  outline: none;
+  border-radius: 3px;
+  border: 2px solid white;
+  color: white;
+  font-family: "Heebo", sans-serif;
+  text-align: center;
+  font-size: large;
+  box-shadow: rgba(255, 255, 255, 0.301) 0px 0px 10px 0px;
+  transition: 0.3s;
+}
+
+.allergies-input input:hover {
+  box-shadow: rgba(255, 255, 255) 0px 0px 10px 0px;
+}
+
+.allergies-submit button {
+  height: 50px;
+  width: 150px;
+  position: absolute;
+  right: 5%;
+  bottom: 3rem;
+  color: white;
+  background-color: #263328;
+  border: none;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.486) 0px 0px 10px 0px;
+  transition: 0.3s;
+  margin-right: 100px;
+}
+
+
+.allergies-update button {
+  height: 50px;
+  width: 150px;
+  position: absolute;
+  right: 5%;
+  bottom: 3rem;
+  color: white;
+  background-color: #263328;
+  border: none;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.486) 0px 0px 10px 0px;
+  transition: 0.3s;
+  margin-right: 300px;
+}
+
+.allergies-submit button:hover {
+  box-shadow: rgba(0, 0, 0, 0.788) 0px 0px 10px 0px;
+  cursor: pointer;
+}

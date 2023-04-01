@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/recipestyle.css') }}">
+    <title>Recipe and Ingredients</title>
+</head>
+<body>
+   
+<div id="left-column">
+<img  src="{{ url_for('static', filename='templateImages/pana.png') }}">
+</div>
+{% if prediction %}
+<div id="middle-column">
+    <h1 style="text-align: center;">  {{prediction}} </h1>
+    <h2>Ingredients</h2>
+    <p align="center"> {{ing}} </p>
+    <h2>Recipe</h2>
+      <p>{{recipe}}</p>
+      <a href="{{ url_for('viewAllergy') }}"><button type="button" class="btn btn-success">View Allergy</button></a>
+
+     
+</div>
+<div id="right-column">
+  
+    
+    
+		
+    </div>
+
+    
+    
+    {% endif %}
+    <script>
+        function saveFoodName(){
+            const selectFood=document.getElementById("predictionFoodHidden");
+            fetch('/allergy_list'),{
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify({foodName})
+            }
+
+            
+        }
+
+    </script>
+ 
+</body>
+</html>

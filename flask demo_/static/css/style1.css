@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #135F9D;
+}
+/*Column Division*/
+#left-column {
+  display: flex;
+  background-color: #135F9D;
+  width: 50%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+  position: absolute;
+  top: 5%;
+}
+/*Decorative image*/
+#image-uploader-deco-img {
+  height: 600px;
+  max-width: 100%;
+  margin: auto;
+  position: relative;
+  top: 50%;
+}
+/*Image Drop Area Heading*/
+.jumbotroryn .bg-prima {
+  text-align: center;
+  margin-top: 0;
+}
+/* Style for the right column */
+#right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #135F9D;
+  width: 50%;
+  height: 100%;
+}
+
+#middle-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* align items to the bottom of the column */
+  align-items: center;
+  background-color: #135F9D;
+  width: 1%;
+  height: 100%;
+}
+
+#middle-column button {
+  padding: 10px 25px;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  background: #fff;
+  color: #5256ad;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 75%;
+  left: 59.35%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.301) ;
+}
+
+#middle-column #submit {
+  position: absolute;
+  left: 79%;
+  top: 75.35%;
+}
+
+.h1 {
+  position: relative;
+  top: -24.5rem;
+  display: flex;
+  left: 14.5rem;
+}
+
+.control-label {
+  width: auto;
+}
+
+.group1 {
+  position: relative;
+  top: -8rem;
+}
+.btn-success {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  position: relative;
+  left: -22.5rem;
+  top: -7.5rem;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cook Smart</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="shortcut icon" type="images/jpg" href="./images/icon.png">
+</head>
+<body>
+    <div class="allergy-image">
+        <img  src="{{ url_for('static', filename='templateImages/vector.png') }}">
+        
+    </div>
+
+    <div class="allergies-section">
+        <h1>LIST YOUR ALLERGIES</h1>
+        <select   id="allergiesList"    name="allergies" class="allergies-select" multiple>
+            <option value="eggs">Eggs</option>
+            <option value="milk">Milk</option>
+            <option value="chickpeas">Chickpeas</option>
+            <option value="peanuts">Peanuts</option>
+            <option value="chilli">Chilli</option>
+            <option value="fish">Fish</option>
+            <option value="garlic">Garlic</option>
+            <option value="tomatoes">Tomatoes</option>
+            <option value="lentils">Lentils</option>
+            <option value="chicken">Chicken</option>
+            <option value="wheat">Wheat</option>
+            <option value="sugar">Sugar</option>
+        </select>
+
+        <div class="allergies-input">
+            <h3>Other</h3>
+            <input type="text" id="allergiesInput" name="allergiesInput" maxlength="50">    
+        </div>
+        
+        <div id="allergyList"></div>
+        <div class="allergies-update">
+            <a href="#"><button id="updateAllergies" onclick="updateAllergies()">SAVE</button></a>
+        </div>
+         <div class="allergies-submit">
+            <a href="/allergyNotification"><button id="saveAllergies" onclick="saveAllergies()">NEXT</button></a>
+        </div>
+        
+       
+    </div>
+   
+    <p>{{allergy}}</p>
+   
+    <script src="{{ url_for('static', filename='js/main.js') }}"> </script>
+    
+    <script>
+        function updateAllergies() {
+          const selectElement = document.getElementById("allergiesList");
+          const selectedOptions = [];
+          const options = selectElement.selectedOptions;
+          for (let i = 0; i < options.length; i++) {
+            selectedOptions.push(options[i].value);
+          }
+        
+          const inputElement = document.getElementById("allergiesInput");
+          const inputValue = inputElement.value.trim();
+          if (inputValue !== "") {
+            selectedOptions.push(inputValue);
+          }
+        
+          // update the content of the allergyList element with the selected options
+          const allergyListElement = document.getElementById("allergyList");
+          allergyListElement.innerHTML = "Selected allergies: " + selectedOptions.join(", ");
+
+        }
+
+      
+        
+          function saveAllergies() {
+            const selectElement = document.getElementById("allergiesList");
+            const selectedOptions = [];
+            const options = selectElement.selectedOptions;
+            for (let i = 0; i < options.length; i++) {
+              selectedOptions.push(options[i].value);
+            }
+          
+            const inputElement = document.getElementById("allergiesInput");
+            const inputValue = inputElement.value.trim();
+            if (inputValue !== "") {
+              selectedOptions.push(inputValue);
+            }
+          
+            // send AJAX request to Flask server
+            const xhr = new XMLHttpRequest();
+              const url = "{{ url_for('allergy_list') }}";
+              const data = JSON.stringify({"allergy_list": selectedOptions});
+              xhr.open("POST", url);
+              xhr.setRequestHeader("Content-Type", "application/json");
+              xhr.send(data);
+          }
+            
+            
+              
+            
+            
+           
+
+        </script>
+    
+
+
+
+
+</body>
+</html>

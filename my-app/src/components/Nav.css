@@ -1,0 +1,32 @@
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:#135F9D;
+    padding: 20px 80px;
+
+}
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#navbar a{
+    text-decoration: none;
+    font-size: large;
+    list-style: none;
+    padding: 0% 20px;
+    position: relative;
+    color:white;
+    transition:0.3s ease-in-out;
+}
+#navbar a :hover{
+    color: aqua;
+    text-decoration: underline;
+}
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sign Up</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	   <link rel="shortcut icon" type="images/jpg" href="{{ url_for('static', filename='images/icon.png') }}">
+	  </head>
+</head>
+<body>
+    <div class="login_SigIn-page">
+        <img src="./images/login_SigIn.png" alt="">
+        <div class="form-box">
+            <div class="form-value">
+                <form action="">
+                    <h2>Login</h2>
+                    <div class="inputbox">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input type="Username" required>
+                        <label for="">Username</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" required>
+                        <label for="">Password</label>
+                    </div>
+                    <div class="login_SigIn-btn">
+                        <a href="./home.html"><button>Login</button></a>
+                    </div>
+                    <div class="register">
+                        <p>Not registered? <a href="./signupPage.html" >SIGN UP</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+	<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body>
+</html>

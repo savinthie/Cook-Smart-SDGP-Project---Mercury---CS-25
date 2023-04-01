@@ -1,0 +1,37 @@
+* {
+    background-color: #135F9D;
+    font-family: "Poppins";
+
+}
+
+body {
+    position: relative;
+}
+
+#left-column {
+    position: absolute;
+    right: 200px;
+    top: 200px;
+}
+
+
+h2 {
+    color: white;
+    font-size: 40px;
+}
+
+p {
+    border: 1px solid red;
+    border-radius: 17px;
+    background-color: red;
+    padding: 20px;
+    color: white;
+
+}
+
+.sneeze-image img {
+    width: 50%;
+    /* or any other value you prefer */
+    height: auto;
+    /* this ensures that the image retains its aspect ratio */
+}

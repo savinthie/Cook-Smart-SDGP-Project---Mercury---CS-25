@@ -1,0 +1,126 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #135F9D;
+}
+
+#left-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    background-color: #135F9D;
+    width: 40%;
+    height: auto;
+}
+
+#right-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: right;
+    background-color: #135F9D;
+    width: 30%;
+    height: 80%;
+}
+#middle-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #135F9D;
+    width: 30%;
+    height: auto;
+}
+
+#image-uploader-deco-img {
+    height: 800px;
+    max-width: 100%;
+    margin: 0;
+    position: relative;
+    top: 40%;
+}
+
+
+.drag-area.active{
+    border: 2px solid #fff;
+}
+.drag-area .icon{
+    font-size: 100px;
+    color: #fff;
+}
+.drag-area header{
+    font-size: 30px;
+    font-weight: 500;
+    color: #fff;
+}
+.drag-area span{
+    font-size: 25px;
+    font-weight: 500;
+    color: #fff;
+    margin: 10px 0 15px 0;
+}
+.drag-area button{
+    padding: 10px 25px;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: #fff;
+    color: #5256ad;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.drag-area img{
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+#viewRecipe {
+    padding: 10px 25px;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: white;
+    color: #5256ad;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 90%;
+    left: 75%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.301) ;
+}
+
+#back {
+    padding: 10px 25px;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: white;
+    color: #5256ad;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 90%;
+    left: 40%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.301) ;
+}
+#para {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #135F9D;
+    width: 50%;
+    height: 100%;
+}
+
+a{
+    font-style: none;
+}
