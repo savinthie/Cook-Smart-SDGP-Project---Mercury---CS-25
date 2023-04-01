@@ -1,29 +1,75 @@
-* {
-    background-color: #135F9D;
-    font-family: "Poppins";
+ * {
+     background-color: #135F9D;
+     font-family: "Poppins";
 
-}
+ }
 
-body {
-    position: relative;
-}
+ body {
+     position: relative;
+ }
+
+ #left-column {
+     position: absolute;
+     right: 200px;
+     top: 250px;
+ }
+
+ #header {
+     position: absolute;
+     top: 50px;
+     right: 200px;
+ }
 
 
-h2 {
-    color: white;
-    font-size: 40px;
-}
+ h2 {
+     color: white;
+     font-size: 40px;
+     margin-top: 0;
+ }
 
-p {
-    border: 1px solid #2EA53A;
-    border-radius: 17px;
-    background-color: #2EA53A;
-    padding: 20px;
-    color: white;
+ p {
+     font-size: 25px;
+     border: 1px solid #25852e;
+     border-radius: 20px;
+     background-color: #25852e;
+     padding: 20px;
+     color: white;
+     cursor: default;
 
-}
+ }
 
-.image {
-    width: 50px;
-    height: auto;
-}
+ p:hover {
+     border: 1px solid #2EA53A;
+     background-color: #2EA53A;
+ }
+
+ .sneeze-image img {
+     margin-right: 20px;
+     margin-top: 0px;
+     width: 40%;
+     height: auto;
+ }
+
+ #uploadanother {
+     position: absolute;
+     bottom: 50px;
+     right: 275px;
+ }
+
+
+ a {
+     border: 1px solid white;
+     background-color: white;
+     padding: 15px;
+     color: #2EA53A;
+     text-decoration: none;
+
+ }
+
+ a:hover {
+     color: white;
+     background-color: #2EA53A;
+     border: #2EA53A;
+     padding: 15px;
+     /* change the link color to red when hovering */
+ }

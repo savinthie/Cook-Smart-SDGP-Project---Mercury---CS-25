@@ -20,32 +20,33 @@
 
 
 
-
-<div class="image">
-    <img src="{{ url_for('static', filename='templateImages/sneeze.png') }}" />
-
-  </div>
-
-
-  
-
 <body>
-    <div class="container">
-
-     
-
-      <div class="header">
-        <h2>Allergies Detected</h2>
-        <a href="/submitPrediction">Upload another Image</a>
-      </div>
-
-
-      <div class="content">
-        <p>Allergen Present: {{message}}</p>
-      </div>
-
+   
+    <div class="sneeze-image">
+        <img  src="{{ url_for('static', filename='templateImages/sneeze.png') }}"> 
     </div>
 
+   
+    <div id="header">
+        <h2>Allergies Detected</h2>
+    </div>
+   
+<div id="left-column">
+    <p>Allergen Present: {{message}}</p>
+    
+</div>
 
-  </body>
+<div id="uploadanother">
+    <a href="/submitPrediction">Upload another Image</a>
+</div>
+
+
+
+
+
+    
+    
+  
+ 
+</body>
 </html>

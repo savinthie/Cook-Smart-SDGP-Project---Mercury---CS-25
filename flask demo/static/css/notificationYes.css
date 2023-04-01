@@ -11,25 +11,65 @@ body {
 #left-column {
     position: absolute;
     right: 200px;
-    top: 200px;
+    top: 250px;
+}
+
+#header {
+    position: absolute;
+    top: 50px;
+    right: 200px;
 }
 
 
 h2 {
     color: white;
     font-size: 40px;
+    margin-top: 0;
 }
 
 p {
+    font-size: 25px;
     border: 1px solid red;
-    border-radius: 17px;
+    border-radius: 20px;
     background-color: red;
     padding: 20px;
     color: white;
+    cursor: default;
 
 }
 
-.image {
-    width: 50px;
+p:hover {
+    border: 1px solid rgb(255, 49, 49);
+    background-color: rgb(255, 49, 49);
+}
+
+.sneeze-image img {
+    margin-right: 20px;
+    margin-top: 0px;
+    width: 40%;
     height: auto;
+}
+
+#uploadanother {
+    position: absolute;
+    bottom: 50px;
+    right: 275px;
+}
+
+
+a {
+    border: 1px solid white;
+    background-color: white;
+    padding: 15px;
+    color: red;
+    text-decoration: none;
+
+}
+
+a:hover {
+    color: white;
+    background-color: red;
+    border: red;
+    padding: 15px;
+    /* change the link color to red when hovering */
 }
