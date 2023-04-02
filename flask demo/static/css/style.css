@@ -1,9 +1,11 @@
-body{
+body {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     background: #135F9D;
+    font-family: "Poppins";
+    color: whitesmoke;
 }
 
 #left-column {
@@ -12,9 +14,9 @@ body{
     justify-content: left;
     align-items: left;
     background-color: #135F9D;
-    width: 40%;
-    height: auto;
+
 }
+
 
 #right-column {
     display: flex;
@@ -25,6 +27,7 @@ body{
     width: 30%;
     height: 80%;
 }
+
 #middle-column {
     display: flex;
     flex-direction: column;
@@ -44,25 +47,29 @@ body{
 }
 
 
-.drag-area.active{
+.drag-area.active {
     border: 2px solid #fff;
 }
-.drag-area .icon{
+
+.drag-area .icon {
     font-size: 100px;
     color: #fff;
 }
-.drag-area header{
+
+.drag-area header {
     font-size: 30px;
     font-weight: 500;
     color: #fff;
 }
-.drag-area span{
+
+.drag-area span {
     font-size: 25px;
     font-weight: 500;
     color: #fff;
     margin: 10px 0 15px 0;
 }
-.drag-area button{
+
+.drag-area button {
     padding: 10px 25px;
     font-size: 20px;
     font-weight: 500;
@@ -73,7 +80,8 @@ body{
     border-radius: 5px;
     cursor: pointer;
 }
-.drag-area img{
+
+.drag-area img {
     height: 300px;
     width: 300px;
     object-fit: cover;
@@ -93,7 +101,7 @@ body{
     position: absolute;
     top: 90%;
     left: 75%;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.301) ;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.301);
 }
 
 #back {
@@ -109,8 +117,9 @@ body{
     position: absolute;
     top: 90%;
     left: 40%;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.301) ;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.301);
 }
+
 #para {
     display: flex;
     flex-direction: column;
@@ -121,3 +130,14 @@ body{
     height: 100%;
 }
 
+h1 {
+    position: absolute;
+    top: 50px;
+    right: 400px;
+    font-size: 50px;
+}
+
+
+#submit {
+    padding: 10px;
+}
