@@ -63,4 +63,4 @@ urllib3==1.26.14
 virtualenv==20.20.0
 Werkzeug==2.2.3
 wrapt==1.15.0
-
+tensorflow
