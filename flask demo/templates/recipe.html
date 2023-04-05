@@ -17,12 +17,12 @@
 </div>
 {% if prediction %}
 <div id="middle-column">
-    <h1 id="pred" style="text-align: center;text-transform: uppercase;font-size:3em;">  {{prediction}} </h1>
-    <h2 style="font-family:Arial">Ingredients</h2>
-    <p align="center"><i> {{ing}} </i></p>
-    <h2 style="font-family:Arial">Recipe</h2>
-      <p><i>{{recipe}}</i></p>
-      <a href="{{ url_for('viewAllergy') }}"><button id="viewallergy" type="button" class="btn btn-success">View Allergy</button></a>
+    <h1 style="text-align: center;">  {{prediction}} </h1>
+    <h2>Ingredients</h2>
+    <p align="center"> {{ing}} </p>
+    <h2>Recipe</h2>
+      <p>{{recipe}}</p>
+      <a href="{{ url_for('viewAllergy') }}"><button type="button" class="btn btn-success">View Allergy</button></a>
 
      
 </div>

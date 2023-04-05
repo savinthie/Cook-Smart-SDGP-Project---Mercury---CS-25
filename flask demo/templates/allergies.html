@@ -10,12 +10,12 @@
 </head>
 <body>
     <div class="allergy-image">
-        <img  id="girl" src="{{ url_for('static', filename='templateImages/vector.png') }}">
+        <img  src="{{ url_for('static', filename='templateImages/vector.png') }}">
         
     </div>
 
     <div class="allergies-section">
-        <h1 id="allergylist">LIST YOUR ALLERGIES</h1>
+        <h1>LIST YOUR ALLERGIES</h1>
         <select   id="allergiesList"    name="allergies" class="allergies-select" multiple>
             <option value="eggs">Eggs</option>
             <option value="milk">Milk</option>
@@ -33,15 +33,15 @@
 
         <div class="allergies-input">
             <h3>Other</h3>
-            <input type="text" id="allergiesInput" name="allergiesInput" maxlength="50">    
+            <input type="text" id="allergiesInput" name="allergiesInput" maxlength="50">     <!--users can input allergies-->
         </div>
         
         <div id="allergyList"></div>
         <div class="allergies-update">
-            <a href="#"><button id="updateAllergies" onclick="updateAllergies()">SAVE</button></a>
+            <a href="#"><button id="updateAllergies" onclick="updateAllergies()">SAVE</button></a>  <!--save occurs when click save button-->
         </div>
          <div class="allergies-submit">
-            <a href="/allergyNotification"><button id="saveAllergies" onclick="saveAllergies()">NEXT</button></a>
+            <a href="/allergyNotification"><button id="saveAllergies" onclick="saveAllergies()">NEXT</button></a>  <!--next occurs when click save button-->
         </div>
         
        
