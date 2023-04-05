@@ -11,7 +11,7 @@ bcrypt = Bcrypt(cooksmartapp)
 
 client = MongoClient(
     "mongodb+srv://savinthie:cookSmart25@cluster0.zg9e7jn.mongodb.net/test")
-db = client["cooksmart"]
+db = client["cooksmart"]   #Conneted Cook Smart app to the database
 collection = db["signup_infos"]
 collection1 = db['recipeAndIngredientsGenerator']
 cooksmartDirectory = 'flask demo/resnet-model-23-02-21.h5'
@@ -137,7 +137,7 @@ ingredient = ""
 allergycount = 0
 p = ""
 
-
+#route for the image upload page
 @cooksmartapp.route("/submitPrediction", methods=['GET', 'POST'])
 def get_output():
     global p
@@ -167,35 +167,42 @@ def get_output():
 
 allergy_list = []
 
-
+#route  for ingrdient selection page
 @cooksmartapp.route('/allergy_list', methods=['POST'])
 def allergy_list():
-    data = request.get_json()
+     # getting data from the POST request
+    data = request.get_json()          
     global allergy_list
-    allergy_list = data.get('allergy_list')
+    # extracting allergy list from the received data
+    allergy_list = data.get('allergy_list')   
 
     # do something with allergy_list
-    print(predicted_food_name)
-    print(ingredient)
-
-    for i in allergy_list:
+     # printing values of predicted_food_name and ingredient variables
+    print(predicted_food_name)                    
+    print(ingredient)                      
+     
+    # iterating through allergy_list and checking if the user entered allergen is present in the ingredient list
+    for i in allergy_list:                 
         global allergycount
         allergycount=0
         print(i)
-        if (ingredient.find(i) != -1):  # find the index of the user entered allergen
+        # find the index of the user entered allergen
+        if (ingredient.find(i) != -1):  
             print("allergen is there")
             allergycount += 1
             print(allergycount)
         else:
-            allergycount == 0 
+            # reset allergycount to 0
+            allergycount == 0                
             print("allergen is not there")
 
-    return render_template("notification.html")
+    # rendering the notification.html template 
+    return render_template("notification.html")       
 
 
 message = ""
 
-
+#route for notification 
 @cooksmartapp.route("/allergyNotification")
 def viewnew():
     global message
@@ -208,7 +215,7 @@ def viewnew():
 
     return render_template("notification.html", message=message)
 
-
+#route for notification display
 @cooksmartapp.route("/viewAllergy")
 def viewAllergy():
     return render_template("allergies.html")
@@ -247,21 +254,24 @@ def submit():
     # Redirect to the success page
     return redirect('/home')
 
+
+
+#route for signup page
 @cooksmartapp.route('/signup')
 def signupfun():
     return render_template('signup.html')
 
-
+#route for display home page
 @cooksmartapp.route('/home')
 def home():
     return render_template('home.html')
 
-
+#route for login page
 @cooksmartapp.route('/login')
 def another_page():
     return render_template('login.html')
 
-
+#route for submit login
 @cooksmartapp.route("/submit_login", methods=["POST"])
 def submit_login():
     # Get the data from the request

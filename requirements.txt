@@ -54,7 +54,6 @@ tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.1
 tensorflow==2.11.0
 tensorflow-estimator==2.11.0
-tensorflow-intel==2.11.0
 tensorflow-io-gcs-filesystem==0.31.0
 termcolor==2.2.0
 tomli==2.0.1
@@ -63,4 +62,4 @@ urllib3==1.26.14
 virtualenv==20.20.0
 Werkzeug==2.2.3
 wrapt==1.15.0
-
+tensorflow
