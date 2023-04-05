@@ -348,16 +348,13 @@ border-bottom-right-radius: 10px;
   box-shadow: rgba(255, 255, 255) 0px 0px 10px 0px;
 }
 
-#girl{
 
-width:400px;
-}
 
 .allergy-image {
-  height: 100%;
-  width: 40vw;
+  height: 70%;
+  width: 50vw;
   position: absolute;
-  top:50px;
+  top:150px;
   left: 0;
   bottom: 0;
   overflow: hidden;

@@ -18,11 +18,11 @@
 {% if prediction %}
 <div id="middle-column">
     <h1 style="text-align: center;">  {{prediction}} </h1><!--display the fooditem name -->
-    <h2>Ingredients</h2>
-    <p align="center"> {{ing}} </p><!--display the ingredient -->
-    <h2>Recipe</h2>
-      <p>{{recipe}}</p><!--display the recipe -->
-      <a href="{{ url_for('viewAllergy') }}"><button type="button" class="btn btn-success">View Allergy</button></a> <!-- will be directed to the view allery page-->
+    <h2 style="font-family:arial">Ingredients</h2>
+    <p align="center;text"><i> {{ing}}</i> </p><!--display the ingredient -->
+    <h2 style="font-family:arial">Recipe</h2>
+      <p><i>{{recipe}}</i></p><!--display the recipe -->
+      <a href="{{ url_for('viewAllergy') }}"><button type="button" class="btn btn-success" id="viewallergy">View Allergy</button></a> <!-- will be directed to the view allery page-->
 
      
 </div>
