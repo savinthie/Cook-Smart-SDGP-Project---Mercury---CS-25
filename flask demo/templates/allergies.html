@@ -10,12 +10,12 @@
 </head>
 <body>
     <div class="allergy-image">
-        <img  src="{{ url_for('static', filename='templateImages/vector.png') }}">
+        <img  id="girl" src="{{ url_for('static', filename='templateImages/vector.png') }}">
         
     </div>
 
     <div class="allergies-section">
-        <h1>LIST YOUR ALLERGIES</h1>
+        <h1 id="allergylist">LIST YOUR ALLERGIES</h1>
         <select   id="allergiesList"    name="allergies" class="allergies-select" multiple>
             <option value="eggs">Eggs</option>
             <option value="milk">Milk</option>
@@ -68,7 +68,7 @@
         
           // update the content of the allergyList element with the selected options
           const allergyListElement = document.getElementById("allergyList");
-          allergyListElement.innerHTML = "Selected allergies: " + selectedOptions.join(", ");
+          allergyListElement.innerHTML = "Your selected allergies: " + selectedOptions.join(", ");
 
         }
 

@@ -141,3 +141,22 @@ h1 {
 #submit {
     padding: 10px;
 }
+
+
+@media screen and (max-width: 600px) {
+.container h1{
+    margin-right:-390px;
+    font-size:2em;
+    
+    
+}
+
+#image-uploader-deco-img {
+    height: 500px;
+    max-width: 100%;
+    margin: 0;
+    position: relative;
+    top: 40%;
+}
+
+}

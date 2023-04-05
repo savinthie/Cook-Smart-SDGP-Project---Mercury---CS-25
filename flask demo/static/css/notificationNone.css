@@ -73,3 +73,46 @@
      padding: 15px;
      /* change the link color to red when hovering */
  }
+
+ @media screen and (max-width: 600px) {
+   
+    .sneeze-image img {
+        margin-right: 20px;
+        margin-top: 100px;
+        width: 50%;
+        height: auto;
+    }
+
+    #uploadanother {
+        position: absolute;
+        bottom: -100px;
+        right: 260px;
+    }
+#header{
+    margin-top:-60px;
+    text-align: center;
+}
+    
+    h2{
+        font-size:2em;
+    }
+
+
+    #left-column {
+        position: absolute;
+        right: 50px;
+        top: 180px;
+    }
+
+    p {
+        font-size: 15px;
+        border: 1px solid #25852e;
+        border-radius: 20px;
+        background-color: #25852e;
+        padding: 15px;
+        color: white;
+        cursor: default;
+   
+    }
+
+}
