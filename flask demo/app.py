@@ -12,7 +12,7 @@ bcrypt = Bcrypt(cooksmartapp)
 client = MongoClient(
     "mongodb+srv://savinthie:cookSmart25@cluster0.zg9e7jn.mongodb.net/test")
 db = client["cooksmart"]
-collection = db["signup_info"]
+collection = db["signup_infos"]
 collection1 = db['recipeAndIngredientsGenerator']
 cooksmartDirectory = 'flask demo/resnet-model-23-02-21.h5'
 cooksmartModel = keras.models.load_model(
