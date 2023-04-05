@@ -180,13 +180,14 @@ def allergy_list():
 
     for i in allergy_list:
         global allergycount
+        allergycount=0
         print(i)
         if (ingredient.find(i) != -1):  # find the index of the user entered allergen
             print("allergen is there")
             allergycount += 1
             print(allergycount)
         else:
-            allergycount == 0
+            allergycount == 0 
             print("allergen is not there")
 
     return render_template("notification.html")
@@ -198,7 +199,7 @@ message = ""
 @cooksmartapp.route("/allergyNotification")
 def viewnew():
     global message
-    print(allergycount)
+    print('allergycount',allergycount)
     if (allergycount > 0):
         message = "Yes"
 
