@@ -14,6 +14,8 @@
         
     </div>
 
+<!-- list of allergen options given to the user-->
+
     <div class="allergies-section">
         <h1>LIST YOUR ALLERGIES</h1>
         <select   id="allergiesList"    name="allergies" class="allergies-select" multiple>
@@ -31,16 +33,17 @@
             <option value="sugar">Sugar</option>
         </select>
 
+        <!-- enter allergen option given to the user-->
         <div class="allergies-input">
             <h3>Other</h3>
             <input type="text" id="allergiesInput" name="allergiesInput" maxlength="50">     <!--users can input allergies-->
         </div>
         
         <div id="allergyList"></div>
-        <div class="allergies-update">
+        <div class="allergies-update"><!-- save the list of allergen option-->
             <a href="#"><button id="updateAllergies" onclick="updateAllergies()">SAVE</button></a>  <!--save occurs when click save button-->
         </div>
-         <div class="allergies-submit">
+         <div class="allergies-submit"><!-- next option , select  the next option that will be directed to the notification page-->
             <a href="/allergyNotification"><button id="saveAllergies" onclick="saveAllergies()">NEXT</button></a>  <!--next occurs when click save button-->
         </div>
         
