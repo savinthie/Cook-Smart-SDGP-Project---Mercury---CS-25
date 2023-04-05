@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'poppins', sans-serif;
+  color:white;
 }
 
 body {
@@ -105,6 +106,22 @@ body {
   font-size: 1.2em;
   top: 20px;
 }
+
+#allergyList{
+  display: flex;
+  padding:auto;
+  text-align: center;
+  justify-content: center;
+  margin-top:auto;
+  background-color:#feffe6f1 ;
+  height:45px;
+ padding:auto;
+color:#135f9d;
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+
+}
+
 
 .login_SigIn-btn button {
   width: 100%;
@@ -278,4 +295,133 @@ body {
 .allergies-submit button:hover {
   box-shadow: rgba(0, 0, 0, 0.788) 0px 0px 10px 0px;
   cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+  #allergyList {
+    height:70px;
+  }
+
+  
+
+#allergylist{
+  font-size:1.2em;
+ 
+  text-align: center;
+}
+
+
+.select {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 100%;
+  position: absolute;
+  top: 55%;
+  left: 100%;
+  transform: translate(-90%, -50%);
+  background: transparent;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.select__item {
+  padding: 8px;
+  height: 40px;
+  width: 110px;
+  cursor: pointer;
+  font-family: "Heebo", sans-serif;
+  border-radius: 3px;
+  border: 2px solid white;
+  color: white;
+  transition: 0.3s;
+  box-shadow: rgba(255, 255, 255, 0.301) 0px 0px 10px 0px;
+}
+
+.select__item:hover {
+  box-shadow: rgba(255, 255, 255) 0px 0px 10px 0px;
+}
+
+.select__item--selected {
+  background: white;
+  color: #135f9d;
+  box-shadow: rgba(255, 255, 255) 0px 0px 10px 0px;
+}
+
+#girl{
+
+width:400px;
+}
+
+.allergy-image {
+  height: 100%;
+  width: 40vw;
+  position: absolute;
+  top:50px;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+
+.allergies-input {
+
+  display: flex;
+  flex-direction: row;
+  gap: .5rem;
+  position: absolute;
+  bottom: 0rem;
+  
+  left: -15%;
+  justify-content: center;
+  align-items: center;
+}
+
+.allergies-input input {
+  height: 40px;
+  width: 110px;
+  background-color: transparent;
+  outline: none;
+  border-radius: 3px;
+  border: 2px solid white;
+  color: white;
+  font-family: "Heebo", sans-serif;
+  text-align: center;
+  font-size: large;
+  left:120px;
+  box-shadow: rgba(255, 255, 255, 0.301) 0px 0px 10px 0px;
+  transition: 0.3s;
+}
+
+.allergies-submit button {
+  height: 40px;
+  width: 110px;
+  position: absolute;
+  right: 15%;
+  bottom: 0rem;
+  color: white;
+  background-color: #263328;
+  border: none;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.486) 0px 0px 10px 0px;
+  transition: 0.3s;
+  margin-right: -125px;
+}
+
+
+.allergies-update button {
+  height: 40px;
+  width: 110px;
+  position: absolute;
+  right: 5%;
+  bottom: 0rem;
+  color: white;
+  background-color: #263328;
+  border: none;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.486) 0px 0px 10px 0px;
+  transition: 0.3s;
+  margin-right: 30px;
+}
+
 }

@@ -33,6 +33,7 @@ body{
     background-color: #135F9D;
     width: 30%;
     height: auto;
+    color:white;
 }
 
 #image-uploader-deco-img {
@@ -123,4 +124,51 @@ body{
 
 a{
     font-style: none;
+}
+
+#headingStyle {
+    font-style: italic;
+}
+
+#viewallergy{
+    height:30px;
+    width:200px;
+    border-radius: 10px;
+    border-color:white;
+    border-style: none;
+    background-color: #fff;
+    color:#135F9D;
+    font-size:1.2em ;
+
+}
+@media screen and (max-width: 600px) {
+#recipeimg{
+    width:190px;
+    height:700px;
+}
+
+#middle-column {
+    margin-left:10px;
+    width: 70%;
+}
+#right-column {
+width:0%;
+}
+#pred{
+    margin-left:-200px;
+    font-size:2em;
+}
+
+
+#viewallergy{
+    height:30px;
+    width:120px;
+    border-radius: 10px;
+    border-color:white;
+    border-style: none;
+    background-color: #fff;
+    color:#135F9D;
+    font-size:1em ;
+
+}
 }

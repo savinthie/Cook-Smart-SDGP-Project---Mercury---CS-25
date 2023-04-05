@@ -107,3 +107,44 @@ body{
   font-weight: 600;
 }
 
+@media screen and (max-width: 600px) {
+  input[type=text]{
+      color:black;
+  }
+  input[type=password]{
+    color:black;
+}
+.login_SigIn-page h2{
+
+  color:#000000;
+}
+
+.inputbox label{
+  color:black;
+}
+
+.login_SigIn-btn button{
+  background-color:#135f9d;
+  color:#fff;
+}
+#login-form,#signup-form{
+  background-color: rgba(255, 255, 255, 0.491);
+}
+.inputbox  {
+  border-bottom: 2px solid#135f9de0  ;
+}
+
+.register p {
+  color:#000000;
+}
+#login {
+  color:#104e81 ;
+}
+
+.icon{
+  border-radius: 5px;
+ 
+  background-color: rgba(0, 0, 0, 0.366);
+}
+
+  }
