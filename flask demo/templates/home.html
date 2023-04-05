@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <!--<link rel="stylesheet" href="style.css">-->
+  
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -14,24 +14,24 @@
 <body>
   <div id="left-column">
     
-    <img id="image-uploader-deco-img" src="{{ url_for('static', filename='templateImages/Character.png') }}">
+    <img id="image-uploader-deco-img" src="{{ url_for('static', filename='templateImages/Character.png') }}"> <!--using image with in the specifies to the path-->
    
 </div>
-<div class="container">
+<div class="container"> 
   <h1 class="jumbotroryn bg-prima">Image Classification</h1>
   <br><br>
-  <form class="form" action="/submitPrediction" method="post" enctype="multipart/form-data">
+  <form class="form" action="/submitPrediction" method="post" enctype="multipart/form-data"> <!--for user inputs-->
 
     <div class="form-group group1">
-      <label class="control-label col-sm-2" for="pwd">Upload Your Image :</label>
+      <label class="control-label col-sm-2" for="pwd">Upload Your Image :</label> <!-- user is more focused on the element-->
       <div class="col-sm-10">          
-        <input type="file" class="form-control" placeholder="Hours Studied"  name="cooksmartFood_image" id="pwd">
+        <input type="file" class="form-control" placeholder="Hours Studied"  name="cooksmartFood_image" id="pwd"> <!--Add a input field for the expected field-->
       </div>
     </div>
 
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="submit" class="btn btn-success">Submit</button> <!--adding a clickable button as a submit-->
       </div>
     </div>
   </form>
