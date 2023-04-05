@@ -225,7 +225,7 @@ def predictionPage():
 def index():
     return render_template("index.html")
 
-
+#signup
 @cooksmartapp.route("/submit", methods=["POST"])
 def submit():
     # Get the data from the request
@@ -246,6 +246,10 @@ def submit():
 
     # Redirect to the success page
     return redirect('/home')
+
+@cooksmartapp.route('/signup')
+def signupfun():
+    return render_template('signup.html')
 
 
 @cooksmartapp.route('/home')
