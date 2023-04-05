@@ -225,6 +225,11 @@ def index():
     return render_template("index.html")
 
 
+@cooksmartapp.route("/signup")
+def signupPage():
+    return render_template("signup.html")
+
+
 @cooksmartapp.route("/submit", methods=["POST"])
 def submit():
     # Get the data from the request
