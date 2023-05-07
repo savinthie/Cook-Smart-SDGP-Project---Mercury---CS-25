@@ -3,6 +3,7 @@ from pymongo import MongoClient
 from flask_bcrypt import Bcrypt
 from tensorflow import keras
 from flask import flash
+import os
 
 cooksmartapp = Flask(__name__)
 bcrypt = Bcrypt(cooksmartapp)
@@ -294,5 +295,5 @@ def submit_login():
     return jsonify({"success": True})
 
 
-if __name__ == "__main__":
-    cooksmartapp.run(debug=True)
+if __name__ == '__main__':
+    cooksmartapp.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
